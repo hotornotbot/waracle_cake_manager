@@ -1,0 +1,8 @@
+//day 1
+2-3 hours after work:
+read spec, decided to migrate project to spring boot.
+Used spring intitializr with web, thymelead, JPA and h2 dependencies.
+
+Got the basic functionality working with a simple thymeleaf web front end.
+
+separated the thymeleaf controller from the rest controller

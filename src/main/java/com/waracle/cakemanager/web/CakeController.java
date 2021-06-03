@@ -25,17 +25,16 @@ public class CakeController {
         return "cakedisplay";
     }
 
-    @GetMapping("/cakes")
+    @GetMapping("/addCake")
     public String addCakeForm(Model model){
-        model.addAttribute("cakes", new Cake());
-        return "cakes";
+        model.addAttribute("addCake", new Cake());
+        return "addCake";
     }
 
-    @PostMapping("/cakes")
+    @PostMapping("/addCake")
     public String cakeSubmit(@ModelAttribute Cake cake, Model model) {
-
         cakeService.addCake(cake);
-        model.addAttribute("cakes", cake);
+        model.addAttribute("addCake", cake);
         return "result";
     }
 
