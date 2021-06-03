@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add a cake</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'title: ' + ${cake.title}" />
+<p th:text="'description: ' + ${cake.description}" />
+<p th:text="'imageUrl: ' + ${cake.imageUrl}" />
+<a href="/cakes">add another cake</a>
+</body>
+</html>

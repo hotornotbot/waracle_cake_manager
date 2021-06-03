@@ -1,0 +1,22 @@
+//PLAN
+
+//convert to a spring boot project
+
+endpoints:
+    root: HTTP GET returns all cakes in a nice readable scrollable HTML format, thymeleaf ? simple web front end
+    /cakes: HTTP GET returns all cakes as json
+            HTTP PUT allows a new cake to be added
+    front end for putting a new cake? web form? human
+
+//oauth2 authentication -
+
+//cloud CI - jenkins ?
+
+//docker
+
+//deploy as scalable openshift deployment ?
+
+//junit/ spring boot unit tests covering all code
+
+//few simple behave or cucumber tests spin up thing and test it
+
