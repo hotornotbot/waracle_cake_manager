@@ -2,7 +2,6 @@ package com.waracle.cakemanager.service;
 
 import com.waracle.cakemanager.entity.Cake;
 import com.waracle.cakemanager.storage.CakeRepository;
-import com.waracle.cakemanager.web.CakeController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -37,6 +36,16 @@ public class CakeServiceTests {
         List<Cake> result = cakeService.getAllCakes();
 
         assertEquals( 3, result.size());
+
+    }
+
+    @Test
+    public void testAddCake(){
+        Cake cake1  = new Cake("lemon drizzle", "lemony cake", "lemondrizzle.jpg");
+
+        cakeService.addCake(cake1);
+
+        Mockito.verify(cakeRepository, Mockito.times(1)).save(cake1);
 
     }
 }
