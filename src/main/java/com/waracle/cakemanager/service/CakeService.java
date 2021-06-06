@@ -24,7 +24,7 @@ public class CakeService {
                         .collect(Collectors.toList());
     }
 
-    public void addCake(Cake cake){
-        cakeRepository.save(cake);
+    public Cake addCake(Cake cake){
+        return cakeRepository.save(cake);
     }
 }

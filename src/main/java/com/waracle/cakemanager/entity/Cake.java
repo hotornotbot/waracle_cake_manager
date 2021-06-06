@@ -1,5 +1,7 @@
 package com.waracle.cakemanager.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,6 +13,7 @@ public class Cake implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", unique = true, nullable = false)
+    @JsonIgnore
     private Long id;
     @Column(name = "TITLE", unique = false, nullable = false, length = 100)
     private String title;
@@ -44,10 +47,14 @@ public class Cake implements Serializable {
     }
 
     public String getImageUrl() {
-        return imageUrl;
+       return "/cake-photos/" + id + "/" + imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public Long getId() {
+        return this.id;
     }
 }

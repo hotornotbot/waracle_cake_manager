@@ -20,7 +20,7 @@
         <tr th:each="cake : ${cakedisplay}">
             <td th:text="${cake.title}"></td>
             <td th:text="${cake.description}"></td>
-            <td th:text="${cake.imageUrl}"></td>
+            <td><img th:src="@{${cake.imageUrl}}" width="300"/></td>
         </tr>
         <table>
 </div>

@@ -6,11 +6,15 @@
 </head>
 <body>
 <h1>Add a cake</h1>
-<form action="#" th:action="@{/addCake}" th:object="${addCake}" method="post">
+<form action="#" th:action="@{/addCake}" th:object="${addCake}" method="post" enctype="multipart/form-data">
     <p>title: <input type="text" th:field="*{title}" /></p>
     <p>description: <input type="text" th:field="*{description}" /></p>
-    <p>imageUrl: <input type="text" th:field="*{imageUrl}" /></p>
+    <div>
+        <label>Photos: </label>
+        <input type="file" name="image" accept="image/png, image/jpeg" />
+    </div>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
 </form>
 <a href="/">View all cakes</a>
 </body>
