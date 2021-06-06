@@ -2,20 +2,20 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Add a cake</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 </head>
 <body>
 <h1>Add a cake</h1>
-<form action="#" th:action="@{/addCake}" th:object="${addCake}" method="post" enctype="multipart/form-data">
-    <p>title: <input type="text" th:field="*{title}" /></p>
-    <p>description: <input type="text" th:field="*{description}" /></p>
+<form action="#" enctype="multipart/form-data" method="post" th:action="@{/addCake}" th:object="${addCake}">
+    <p>title: <input th:field="*{title}" type="text"/></p>
+    <p>description: <input th:field="*{description}" type="text"/></p>
     <div>
         <label>Photos: </label>
-        <input type="file" name="image" accept="image/png, image/jpeg" />
+        <input accept="image/png, image/jpeg" name="image" type="file"/>
     </div>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 
 </form>
-<a href="/">View all cakes</a>
+<a href="/">Home / view all cakes</a>
 </body>
 </html>

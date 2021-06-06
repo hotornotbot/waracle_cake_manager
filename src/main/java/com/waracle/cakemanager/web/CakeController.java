@@ -1,7 +1,7 @@
 package com.waracle.cakemanager.web;
 
-import com.waracle.cakemanager.service.CakeService;
 import com.waracle.cakemanager.entity.Cake;
+import com.waracle.cakemanager.service.CakeService;
 import com.waracle.cakemanager.storage.FileUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +19,8 @@ import java.io.IOException;
 @Controller
 public class CakeController {
 
+    private static final String ADD_CAKE = "addCake";
+
     private CakeService cakeService;
 
     public CakeController(@Autowired CakeService cakeService) {
@@ -26,20 +28,20 @@ public class CakeController {
     }
 
     @GetMapping("/")
-    public String displayAllCakes(Model model){
+    public String displayAllCakes(Model model) {
         model.addAttribute("cakedisplay", cakeService.getAllCakes());
         return "cakedisplay";
     }
 
     @GetMapping("/addCake")
-    public String addCakeForm(Model model){
-        model.addAttribute("addCake", new Cake());
-        return "addCake";
+    public String addCakeForm(Model model) {
+        model.addAttribute(ADD_CAKE, new Cake());
+        return ADD_CAKE;
     }
 
     @PostMapping("/addCake")
     public String cakeSubmit(@ModelAttribute Cake cake, Model model,
-    @RequestParam("image") MultipartFile multipartFile) throws IOException {
+                             @RequestParam("image") MultipartFile multipartFile) throws IOException {
 
         //handle photo
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
@@ -52,7 +54,7 @@ public class CakeController {
 
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 
-        model.addAttribute("addCake", cake);
+        model.addAttribute(ADD_CAKE, cake);
         return "result";
     }
 

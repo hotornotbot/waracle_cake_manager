@@ -14,17 +14,17 @@ public class CakeService {
 
     private CakeRepository cakeRepository;
 
-    public CakeService(@Autowired  CakeRepository cakeRepository) {
+    public CakeService(@Autowired CakeRepository cakeRepository) {
         this.cakeRepository = cakeRepository;
     }
 
     public List<Cake> getAllCakes() {
 
-                return StreamSupport.stream(cakeRepository.findAll().spliterator(), false)
-                        .collect(Collectors.toList());
+        return StreamSupport.stream(cakeRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
     }
 
-    public Cake addCake(Cake cake){
+    public Cake addCake(Cake cake) {
         return cakeRepository.save(cake);
     }
 }

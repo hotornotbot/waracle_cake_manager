@@ -3,7 +3,7 @@
 <head>
     <title>Home page</title>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 </head>
 <body>
 <p>
@@ -18,9 +18,9 @@
             <th>Image</th>
         </tr>
         <tr th:each="cake : ${cakedisplay}">
-            <td th:text="${cake.title}" width="33%" align="center" ></td>
-            <td th:text="${cake.description}" width="33%" align="center"></td>
-            <td><img th:src="@{${cake.imageUrl}}" width="33%" align="center"/></td>
+            <td align="center" th:text="${cake.title}" width="33%"></td>
+            <td align="center" th:text="${cake.description}" width="33%"></td>
+            <td><img align="center" th:src="@{${cake.imageUrl}}" width="33%"/></td>
         </tr>
         <table>
 </div>

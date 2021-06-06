@@ -24,6 +24,7 @@ public class Cake implements Serializable {
 
     public Cake() {
     }
+
     public Cake(String title, String description, String imageUrl) {
         this.title = title;
         this.description = description;
@@ -47,7 +48,7 @@ public class Cake implements Serializable {
     }
 
     public String getImageUrl() {
-       return "/cake-photos/" + id + "/" + imageUrl;
+        return "/cake-photos/" + id + "/" + imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {

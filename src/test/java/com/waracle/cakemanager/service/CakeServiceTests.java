@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @ExtendWith(MockitoExtension.class)
 public class CakeServiceTests {
 
@@ -23,11 +24,11 @@ public class CakeServiceTests {
     CakeRepository cakeRepository;
 
     @Test
-    public void testGetAllCakes(){
+    public void testGetAllCakes() {
 
-        Cake cake1  = new Cake("lemon drizzle", "lemony cake", "lemondrizzle.jpg");
-        Cake cake2  = new Cake("orange drizzle", "orange cake", "orangedrizzle.jpg");
-        Cake cake3  = new Cake("apple drizzle", "apple cake", "applerizzle.jpg");
+        Cake cake1 = new Cake("lemon drizzle", "lemony cake", "lemondrizzle.jpg");
+        Cake cake2 = new Cake("orange drizzle", "orange cake", "orangedrizzle.jpg");
+        Cake cake3 = new Cake("apple drizzle", "apple cake", "applerizzle.jpg");
 
         List<Cake> cakeList = Arrays.asList(cake1, cake2, cake3);
 
@@ -35,13 +36,13 @@ public class CakeServiceTests {
 
         List<Cake> result = cakeService.getAllCakes();
 
-        assertEquals( 3, result.size());
+        assertEquals(3, result.size());
 
     }
 
     @Test
-    public void testAddCake(){
-        Cake cake1  = new Cake("lemon drizzle", "lemony cake", "lemondrizzle.jpg");
+    public void testAddCake() {
+        Cake cake1 = new Cake("lemon drizzle", "lemony cake", "lemondrizzle.jpg");
 
         cakeService.addCake(cake1);
 
