@@ -9,7 +9,7 @@
 <p>
     <span th:text="'All our cakes'"></span>
 </p>
-
+<a href="/addCake">add a new cake</a>
 <div th:if="${ not#lists.isEmpty(cakedisplay)}">
     <table>
         <tr>
@@ -18,12 +18,11 @@
             <th>Image</th>
         </tr>
         <tr th:each="cake : ${cakedisplay}">
-            <td th:text="${cake.title}"></td>
-            <td th:text="${cake.description}"></td>
-            <td><img th:src="@{${cake.imageUrl}}" width="300"/></td>
+            <td th:text="${cake.title}" width="33%" align="center" ></td>
+            <td th:text="${cake.description}" width="33%" align="center"></td>
+            <td><img th:src="@{${cake.imageUrl}}" width="33%" align="center"/></td>
         </tr>
         <table>
 </div>
-<a href="/addCake">add a new cake</a>
 </body>
 </html>
