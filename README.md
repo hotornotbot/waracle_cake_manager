@@ -8,10 +8,25 @@ You must have java 11 or over and maven installed to run cake manager.
 
 ## Usage
 
+Can be run as a java application or a docker container
+
 Use maven to run
 
 ```bash
 mvn spring-boot:run
+```
+
+#docker
+
+In project root execute
+
+```bash
+docker build . -t cakemanager 
+```
+to build and tag the image, then run 
+
+```bash
+docker run -p 8081:8081 cakemanager
 ```
 
 Cake manager will run on localhost port 8081 by default. This can be altered in cakemanager/src/main/resources/application.properties.
