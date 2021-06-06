@@ -15,4 +15,18 @@ Tested application with spring boot integration test
 Implemented image upload/view for thymeleaf and image upload for REST controller
 altered integration test to test image upload.
 
+Added dockerfile and made port configurable
+
+//EXTENSIONS
+
+I had limited time to complete this exercise but there are any possible extensions to make it production ready:
+
+1: BDD tests
+2: Validation and error handling
+3: CSS/styling/ look and feel improvements to web front end
+4: Oauth authentication for adding cakes
+5: Persistent DB
+6: Upload files to service like amazon S3
+7: Container orchestration
+
 
